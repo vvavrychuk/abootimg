@@ -289,11 +289,6 @@ int check_boot_img_header(t_abootimg* img)
     return 1;
   }
 
-  if (!(img->header.ramdisk_size)) {
-    fprintf(stderr, "%s: ramdisk size is null\n", img->fname);
-    return 1;
-  }
-
   unsigned page_size = img->header.page_size;
   if (!page_size) {
     fprintf(stderr, "%s: Image page size is null\n", img->fname);
